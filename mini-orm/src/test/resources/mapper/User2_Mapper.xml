@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
+
+<mapper namespace="net.tianzx.arch.dao.IUserDao2">
+
+    <select id="queryUserInfoById" parameterType="java.lang.Long" resultType="net.tianzx.arch.vo.User">
+        SELECT id, userId, userNickName, userHead, userPassword, createTime
+        FROM user
+        where id = #{id}
+    </select>
+
+    <select id="queryUserList" parameterType="net.tianzx.arch.vo.User" resultType="net.tianzx.arch.vo.User">
+        SELECT id, userId, userNickName, userHead, userPassword, createTime, updateTime
+        FROM user
+        where userNickName = #{userNickName}
+    </select>
+
+</mapper>
